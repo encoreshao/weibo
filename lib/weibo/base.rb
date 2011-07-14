@@ -261,6 +261,22 @@ module Weibo
       perform_get('/users/uggestions.json', :query => query)
     end
 
+    # geocode/ip_to_geo 根据ip返回地理信息 
+    def geocode_ip_to_geo(query={})
+      perform_get('/location/geocode/ip_to_geo.json', :query => query)
+    end
+
+    # geocode/address_to_geo 根据地址返回坐标的接口
+    # address need uriencode
+    def geocode_address_to_geo(query={})
+      perform_get('/location/geocode/address_to_geo.json', :query => query)
+    end
+
+    # geocode/geo_to_address 根据坐标返回地址信息的接口
+    def geocode_geo_to_address
+      perform_get('/location/geocode/address_to_geo.json', :query => query)
+    end
+
     # account/update_profile 更改资料
     # One or more of the following must be present:
     #   name, email, url, location, description
